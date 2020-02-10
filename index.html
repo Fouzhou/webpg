@@ -1,37 +1,106 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>My Webpage</title>
-		<link rel="stylesheet" type="text/css" href="mystyle.css">
-		<meta name="description" content="A simple webpage for CIS-128-OLH">
-	</head>
-	<body style="background-color:#111111">
-		<div class=wrapper> 
-			<div class=header><h1>CIS-128-OLH Mobile Web Design</h1></div>
-			<div class=bodyhead><h2>Who I am </h2></div>
-			<div><img src="self.jpg" alt="pic1" style="width:250px;"></div>
 
-				<div class=paragraph><p>My name is Leonardo Sagastume and a couple of my hobbies are playing guitar and engaging in Fantasy Football with the people around me. In addition, I have a knack for playing first-person shooters like Fortnite & Risk of Rain. I enjoy walks with my dog who goes by Trots. 
-				</p></div>
-			
-			
-			<div class=paragraph><p>I am interested in the process of building a website from top to bottom for mobile devices. I'd also like to brush up on my HTML, CSS, & Javascript syntaxes. My hope is to create my own website that I can soley maintain on the frontend from what I learn in this class. </p></div>
+<html lang="en">
+<head>
+	<title>My Webpage</title>
+	<meta charset="utf-8">
+	<link href="mystyle.css" rel="stylesheet" type="text/css">
+	<script src="js/jquery-3.4.1.min.js">
+	</script>
+	<script src="js/main.js">
+	</script>
+</head>
 
-			<div class=bodyhead><h2>Technologies for this class</h2></div>
-				<ul>
-					<li>HTML</li>
-					<li>CSS</li>
-					<li>Javascript</li>
-				</ul>
-			<div class=bodyhead><h2>Great Coding and HTML Resources</h2></div>
-				<dl>
-					 <dt><a href="https://stackoverflow.com">Stack Overflow</a></dt>
-					 	<dd>I've used stack overflow many times to troubleshoot code errors. It provides a great breadth of useful inputs from seasoned web developers and programmers alike.</dd>
-					 <dt><a href="https://www.freecodecamp.org">Free Code Camp</a> </dt>
-						<dd>Free code camp helped me brush up on the html syntax used to make this webpage!</dd>
-
-				</dl>
-
+<body>
+	<div class="wrapper">
+		<div class="header">
+			<h1>CIS-128-OLH Mobile Web Design</h1>
 		</div>
-	</body>
+
+
+		<div class="bodyhead">
+			<h2>Who I am</h2>
+		</div>
+
+
+		<div><img alt="selfiepic" src="self.jpg" style="width:250px;">
+		</div>
+
+
+		<div class="paragraph">
+			<p>My name is Leonardo Sagastume and a couple of my hobbies are playing guitar and engaging in Fantasy Football with the people around me. In addition, I have a knack for playing first-person shooters like Fortnite & Risk of Rain. I enjoy walks with my dog who goes by Trots.</p>
+		</div>
+
+
+		<div class="paragraph">
+			<p>I am interested in the process of building a website from top to bottom for mobile devices. I'd also like to brush up on my HTML, CSS, & Javascript syntaxes. My hope is to create my own website that I can soley maintain on the frontend from what I learn in this class.</p>
+		</div>
+
+
+		<div class="bodyhead">
+			<h2>Technologies for this class</h2>
+		</div>
+
+
+		<ul>
+			<li>HTML</li>
+
+
+			<li>CSS</li>
+
+
+			<li>Javascript</li>
+		</ul>
+
+
+		<div class="bodyhead">
+			<h2>Great Coding and HTML Resources</h2>
+		</div>
+
+
+		<dl>
+			<dt>
+				<a href="https://stackoverflow.com">Stack Overflow</a>
+			</dt>
+
+
+			<dd>I've used stack overflow many times to troubleshoot code errors. It provides a great breadth of useful inputs from seasoned web developers and programmers alike.</dd>
+
+
+			<dt>
+				<a href="https://www.freecodecamp.org">Free Code Camp</a>
+			</dt>
+
+
+			<dd>Free code camp helped me brush up on the html syntax used to make this webpage!</dd>
+		</dl>
+	</div>
+	<button id="btn1" style="color: red;" type="button">Start Animation</button> 
+	<script>
+	                 var button = document.getElementById("btn1");
+	                 // When button is clicked
+	                 button.onclick = function(){
+	                 $("document").ready(function() {
+	                     $("img").css("border", "10px solid green");
+	                     $(document).ready(function() {
+	                         $('.header').each(function() {
+	                             $(this).data('original-size', $(this).css('fontSize'));
+	                             var defaultSize = $(this).data('original-size');
+	                                 // Header animation
+	                                   $(this).css("color", "green");
+	                                   $(this).animate({
+	                                     fontSize: "20"
+	                                   }, 500);
+	                                   $(this).animate({
+	                                     fontSize: defaultSize
+	                                   }, 500);
+
+	                         });
+	                     });
+
+	                 });
+	                 }
+
+	</script>
+</body>
 </html>
